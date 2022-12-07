@@ -17,6 +17,7 @@ body {
 .wrapper {
     width: 23.4rem;
     height: 100%;
+  
 }
 
 nav {
@@ -120,6 +121,7 @@ nav {
         z-index: 4;
         display: flex;
         flex-direction: column;
+        box-shadow: 0 0 10px grey;
 
         &__title {
             display: flex;
@@ -178,20 +180,12 @@ nav {
             }
         }
 
-        &-image {
-        }
     }
 }
 
 .cart-items-pricing {
     display: flex;
     flex-direction: row;
-}
-
-.overlay {
-    width: 100wv;
-    height: 100vh;
-    background-color: $overlay-bg;
 }
 
 
@@ -425,4 +419,283 @@ footer {
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@include media-md {
+
+    body {
+        height: 100vh;
+       
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper {
+        width: 100%;
+        max-width: 60rem;
+        height: 100%;
+        max-height: 50rem;
+      
+    }
+
+    nav {
+        height: 7rem;
+        border-bottom: 1px solid lightgray;
+    }
+
+    .navbar-right {
+        position: relative;
+    }
+
+    .navbar-cart {
+        margin-right: 2rem;
+    }
+
+    .avatar {
+
+        & img {
+        width: 3.3rem;
+        cursor: pointer;
+    
+        &:hover {
+            border-radius: 100%;
+            border: 2px solid $orange;
+        }
+    }
+    }
+
+    .menu {
+        background-color: transparent;
+        position: relative;
+        left: auto;
+        top: auto;
+ 
+        padding-top: 0rem;
+        width: auto;
+        height: auto;
+
+    
+        ul {
+            background-color: transparent;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1rem;
+            z-index: 3;
+            list-style: none;
+    
+            a {
+                color: $text-primary;
+                font-weight: 400;
+                font-size: 1rem;
+                padding-left: 1.5rem;
+                text-decoration: none;
+            }
+        }
+    }
+
+
+    .burger-container {
+        display: none;
+
+    }
+    main {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 80%;
+    }
+
+    .product-image {
+        width: 50%;
+        height: 80%;
+    }
+
+    .product-info {
+        width: 50%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &__brand {
+            color: $orange;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            margin-bottom: 0.6rem;
+        }
+    
+        &__model {
+            color: $text-header;
+            font-weight: 700;
+            font-size: 2.4rem;
+            line-height: 3rem;
+            margin-bottom: 1.7rem;
+        }
+    
+        &__description {
+            color: $text-primary;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    
+        &__price {
+            width: 50%;
+            height: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+    
+            .price {
+                width: 50%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 1rem;
+    
+                p {
+                    color: $text-header;
+                    font-size: 1.7rem;
+                    font-weight: 700;
+                }
+    
+                &__rebate p {
+                    color: $orange;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    width: 3.5rem;
+                    height: 2rem;
+                    border-radius: 10px;
+                    background-color: $pale-orange;
+                    text-align: center;
+                    padding: 0.3rem;
+                }
+                &__before {
+                    
+                    color: $grayish-blue;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+        
+                    text-decoration: line-through;
+                }
+            }
+        }
+
+    }
+
+    .product-info__cart {
+        margin-top: 2rem;
+        flex-direction: row;
+    
+        &-amount {
+            width: 40%;
+        }  
+    }
+
+ 
+    .cart-content {
+        width: 22rem;
+        height: 14rem;
+        background-color: white;
+        position: absolute;
+        top: 8rem;
+        right: 1em;
+        border-radius: 10px;
+        z-index: 4;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px lightgray;
+
+        &__title {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            height: 30%;
+            width: 100%;
+            padding: 1rem;
+            border-bottom: 1px solid lightgray;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            font-weight: 700;
+            height: 70%;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        &__container {
+            width: 100%;
+            display: flex;
+            align-items: space-between;
+            justify-content: center;
+            
+
+            .cart-content__image img {
+                width: 3rem;
+                height: 3rem;
+                margin: 0 0.5rem;
+                border-radius: 5px;
+            }
+            
+            .cart-items {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                color: $text-primary;
+                font-weight: 400;
+                justify-content: flex-start;
+                
+                &-model {
+                    margin-bottom: 0.3rem;
+                }
+
+                &-pricing {
+                    gap: 0.3rem;
+                }
+
+                &-sum {
+                    color: $text-header;
+                    font-weight: 700;
+                }
+
+            }
+
+            .cart-delete {
+                width: 1.5rem;
+                height: 1.5rem;
+                background-image: url("../src/images/icon-delete.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                align-self: center;
+                cursor: pointer;
+                    
+            }
+        }
+
+    }
+
+    .hidden {
+        display: none;
+    }
+    
+    .closed {
+        display: block;
+    }
+    
+    .opened {
+        display: block;
+    }
 }
