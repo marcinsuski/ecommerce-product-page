@@ -31,10 +31,13 @@ body {
 .container {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .wrapper {
-  width: 100%;
+  width: 23.4rem;
   height: 100%;
 }
 
@@ -60,7 +63,8 @@ nav {
   position: relative;
   display: flex;
   align-items: center;
-  z-index: 5;
+  z-index: 10;
+  cursor: pointer;
 }
 .burger-container .burger {
   width: 1rem;
@@ -98,7 +102,7 @@ nav {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 3;
+  z-index: 8;
   padding-top: 5rem;
   width: 70%;
   height: 100%;
@@ -119,10 +123,253 @@ nav {
   text-decoration: none;
 }
 
+.navbar-cart {
+  position: relative;
+  cursor: pointer;
+}
+.navbar-cart .cart-content {
+  width: 22rem;
+  height: 14rem;
+  background-color: white;
+  position: absolute;
+  top: 3.3rem;
+  right: -3.5rem;
+  border-radius: 10px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+}
+.navbar-cart .cart-content__title {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  height: 30%;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+.navbar-cart .cart-content__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: 700;
+  height: 70%;
+  width: 100%;
+  padding: 1rem;
+}
+.navbar-cart .cart-content__container {
+  width: 100%;
+  display: flex;
+  align-items: space-between;
+  justify-content: center;
+}
+.navbar-cart .cart-content__container .cart-content__image img {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+}
+.navbar-cart .cart-content__container .cart-items {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  color: hsl(219deg, 9%, 45%);
+  font-weight: 400;
+  justify-content: center;
+}
+.navbar-cart .cart-content__container .cart-delete {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("../src/images/icon-delete.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  align-self: center;
+  cursor: pointer;
+}
+.cart-items-pricing {
+  display: flex;
+  flex-direction: row;
+}
+
 .overlay {
   width: 100wv;
   height: 100vh;
   background-color: hsla(0deg, 0%, 0%, 0.75);
+}
+
+.avatar img {
+  width: 1.8rem;
+  cursor: pointer;
+}
+.avatar img:hover {
+  border-radius: 100%;
+  border: 2px solid hsl(26deg, 100%, 55%);
+}
+
+main {
+  width: 100%;
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+}
+.product-image__thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.product-image__thumbnail img {
+  width: 24rem;
+  height: 16rem;
+  object-fit: cover;
+}
+.product-image__thumbnail .control {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+}
+.product-image__thumbnail .control-previous {
+  background-image: url("../src/images/icon-previous.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  position: absolute;
+  left: 1rem;
+  z-index: 3;
+}
+.product-image__thumbnail .control-previous:hover {
+  background-image: url("../src/images/icon-previous-hover.svg");
+}
+.product-image__thumbnail .control-next {
+  background-image: url("../src/images/icon-next.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  position: absolute;
+  right: 1rem;
+  z-index: 3;
+}
+.product-image__thumbnail .control-next:hover {
+  background-image: url("../src/images/icon-next-hover.svg");
+}
+
+.product-info {
+  width: 100%;
+  padding: 1rem;
+}
+.product-info__brand {
+  color: hsl(26deg, 100%, 55%);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin-bottom: 0.6rem;
+}
+.product-info__model {
+  color: hsl(220deg, 13%, 13%);
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+.product-info__description {
+  color: hsl(219deg, 9%, 45%);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+.product-info__price {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-info__price .price {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.product-info__price .price p {
+  color: hsl(220deg, 13%, 13%);
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.product-info__price .price__rebate p {
+  color: hsl(26deg, 100%, 55%);
+  font-weight: 700;
+  font-size: 1.1rem;
+  width: 3.5rem;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: hsl(25deg, 100%, 94%);
+  text-align: center;
+  padding: 0.3rem;
+}
+.product-info__price .price__before {
+  color: hsl(220deg, 14%, 75%);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.product-info__cart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+.product-info__cart-amount {
+  width: 90%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(223deg, 64%, 98%);
+  border-radius: 10px;
+}
+.product-info__cart .amount {
+  align-self: center;
+  font-weight: 700;
+}
+
+.button__add {
+  width: 2rem;
+  height: 2rem;
+  color: orange;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  align-self: center;
+}
+
+.product-info__cart-add img {
+  margin-right: 0.8rem;
+  height: 1.1rem;
+}
+
+button {
+  height: 3.5rem;
+  width: 90%;
+  border-radius: 10px;
+  background-color: hsl(26deg, 100%, 55%);
+  color: hsl(0deg, 0%, 100%);
+  border: none;
+  font-size: 1rem;
+  align-items: center;
+  cursor: pointer;
+}
+button:hover {
+  border: hsl(26deg, 100%, 55%);
+  opacity: 0.6;
 }
 
 .hidden {
@@ -137,22 +384,13 @@ nav {
   display: block;
 }
 
-.avatar img {
-  width: 1.6rem;
-}
-
-main {
+footer {
+  position: fixed;
+  bottom: 0.2rem;
   width: 100%;
-}
-
-.product-image {
   display: flex;
   justify-content: center;
-}
-.product-image__thumbnail img {
-  width: 24rem;
-  height: 18rem;
-  object-fit: cover;
+  align-items: center;
 }
 
 .attribution {

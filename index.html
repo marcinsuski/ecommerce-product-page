@@ -28,9 +28,9 @@
                     <div class="navbar">
                         <div class="burger-container">
                             <div class="burger">
-                                <!--create css burger-->
+                                <!--css burger-->
                                 <!-- <img src="./src/images/icon-menu.svg" alt="menu" /> -->
-                                <!--create css burger-->
+                           
                             </div>
                         </div>
                         <header class="logo">
@@ -51,9 +51,30 @@
                         </div>
                     </div>
                     <div class="navbar-right">
-                        <div class="navbar-cart">
+                        <div class="navbar-cart ">
                             <img src="./src/images/icon-cart.svg" alt="cart" />
                         </div>
+                        <div class="cart-content hidden">
+                            <div class="cart-content__title ">Cart</div>
+                            <div class="cart-content__content ">
+                                <div class="cart-content__container">
+                                    <div class="cart-content__image">
+                                        <img src="../src/images/image-product-1-thumbnail.jpg" alt="">
+                                    </div>
+                                    <div class="cart-items">
+                                        <div class="cart-items-model">Fall Limisted Edition Sneakers</div>
+                                        <div class="cart-items-pricing">
+                                            <div class="cart-items-price">$125.00</div>
+                                            <div class="cart-items-count">x <span>3</span></div>
+                                            <div class="cart-items-sum">$375</div>
+                                        </div>
+                                    </div>    
+                                    <div class="cart-delete"></div>
+                                </div>
+                                <button class="checkout">Checkout</button>
+                            </div>
+                        </div>
+                  
                         <div class="avatar">
                             <img
                                 src="./src/images/image-avatar.png"
@@ -66,7 +87,12 @@
                 <main>
                     <div class="product-image">
                         <div class="product-image__thumbnail">
-                            <img src="../src/images/image-product-1.jpg" alt="image 1">
+                            <button class="control control-previous"></button>
+                            <img
+                                src="../src/images/image-product-1.jpg"
+                                alt="image 1"
+                            />
+                            <button class="control control-next"></button>
                         </div>
                         <div class="product-image__items hidden">
                             <div class="product-image__item"></div>
@@ -76,27 +102,36 @@
                         </div>
                     </div>
                     <div class="product-info">
-                        <div class="produt-info__brand">Sneaker Company</div>
-                        <div class="product-info__model">Fall Limited</div>
+                        <div class="product-info__brand">Sneaker Company</div>
+                        <div class="product-info__model">
+                            Fall Limited Edition Sneakers
+                        </div>
                         <div class="product-info__description">
-                            Edition Sneakers These low-profile sneakers are your
-                            perfect casual wear companion. Featuring a durable
-                            rubber outer sole, they’ll withstand everything the
-                            weather can offer.
+                            These low-profile sneakers are your perfect casual
+                            wear companion. Featuring a durable rubber outer
+                            sole, they’ll withstand everything the weather can
+                            offer.
                         </div>
                         <div class="product-info__price">
-                            $125.00 50% $250.00
+                            <div class="price">
+                            <p>$125.00</p>
+                            <div class="price__rebate"><p>50%</p></div>
+                            </div>
+                            <div class="price__before">$250.00</div>
                         </div>
                         <div class="product-info__cart">
                             <div class="product-info__cart-amount">
-                                <button class="minus">-</button>
-                                <div class="amount">3</div>
-                                <button class="plus">+</button>
+                                <button class="button__add minus">–</button>
+                                <div class="amount">0</div>
+                                <button class="button__add plus">+</button>
                             </div>
-                            <button class="product-info__cart-add"></button>
+                          
+                            <button class="product-info__cart-add">
+                                <img src="../src/images/icon-cart-button.svg" alt="">
+                                <span>Add to cart</span> 
+                            </button>
                         </div>
-
-                        0 Add to cart
+                   
                     </div>
                 </main>
             </div>
