@@ -1,7 +1,158 @@
 @use "config" as *;
 
+body {
+    font-size: 100%;
+    font-family: "Kumbh Sans", sans-serif;
+    width: 100vw;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar {
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1.5rem;
+}
+
+.burger-container {
+    height: 1rem;
+    width: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+
+    .burger {
+        width: 1rem;
+        height: 0.2rem;
+        background-color: $text-primary;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1rem;
+            height: 0.2rem;
+            background-color: $text-primary;
+            top: 0;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 1rem;
+            height: 0.2rem;
+            background-color: $text-primary;
+            bottom: 0;
+        }
+    }
+}
+
+.navbar-right {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 1.5rem;
+}
+
+.menu {
+    background-color: $white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    padding-top: 5rem;
+    width: 70%;
+    height: 100%;
+
+    ul {
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 3;
+        list-style: none;
+
+        a {
+            color: $black;
+            font-weight: 700;
+            font-size: 1.3rem;
+            padding-left: 1.5rem;
+            text-decoration: none;
+        }
+    }
+}
+
+.overlay {
+    width: 100wv;
+    height: 100vh;
+    background-color: $overlay-bg;
+}
+.hidden {
+    display: none;
+}
+
+.closed {
+    display: none;
+}
+
+.opened {
+    display: block;
+}
 
 
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.avatar img {
+    width: 1.6rem;
+}
+
+
+main {
+    width: 100%;
+
+}
+
+.product-image {
+    display: flex;
+    justify-content: center;
+
+    &__thumbnail  {
+    
+
+        img {
+            width: 24rem;
+            height: 18rem;
+            object-fit: cover;
+        }
+
+    }
+
+}
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

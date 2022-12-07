@@ -4,7 +4,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- displays site properly based on user's device -->
-
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
         <link
             rel="icon"
             type="image/png"
@@ -19,23 +24,29 @@
     <body>
         <div class="container">
             <div class="wrapper">
-                <header>
+                <nav>
                     <div class="navbar">
-                        <div class="logo">
+                        <div class="burger-container">
+                            <div class="burger">
+                                <!--create css burger-->
+                                <!-- <img src="./src/images/icon-menu.svg" alt="menu" /> -->
+                                <!--create css burger-->
+                            </div>
+                        </div>
+                        <header class="logo">
+                            <div class="overlay closed"></div>
                             <img
                                 src="./src/images/logo.svg"
                                 alt="sneakers logo"
                             />
-                        </div>
-                        <div class="burger"><img src="./src/images/icon-menu.svg" alt="menu"></div>
-                        <div class="menu">    
+                        </header>
+                        <div class="menu closed">
                             <ul>
                                 <li><a href="#">Collections</a></li>
                                 <li><a href="#">Men</a></li>
                                 <li><a href="#">Women</a></li>
                                 <li><a href="#">About</a></li>
                                 <li><a href="#">Contact</a></li>
-                            
                             </ul>
                         </div>
                     </div>
@@ -43,15 +54,21 @@
                         <div class="navbar-cart">
                             <img src="./src/images/icon-cart.svg" alt="cart" />
                         </div>
-                        <navbar class="avatar"
-                            ><img src="/src/images/icon-avatar.svg" alt="profile"
-                        /></navbar>
+                        <div class="avatar">
+                            <img
+                                src="./src/images/image-avatar.png"
+                                alt="profile"
+                            />
+                        </div>
                     </div>
-                </header>
+                </nav>
+
                 <main>
                     <div class="product-image">
-                        <div class="product-image__thumbnail"></div>
-                        <div class="product-image__items">
+                        <div class="product-image__thumbnail">
+                            <img src="../src/images/image-product-1.jpg" alt="image 1">
+                        </div>
+                        <div class="product-image__items hidden">
                             <div class="product-image__item"></div>
                             <div class="product-image__item"></div>
                             <div class="product-image__item"></div>
