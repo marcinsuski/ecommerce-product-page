@@ -22,6 +22,9 @@
         <link rel="stylesheet" href="./dist/styles.css" />
     </head>
     <body>
+        <div class="popup hidden">
+            <img src="../src/images/image-product-1.jpg" alt="">
+        </div>
         <div class="container">
             <div class="wrapper">
                 <nav>
@@ -51,7 +54,7 @@
                         </div>
                     </div>
                     <div class="navbar-right">
-                        <div class="navbar-cart">
+                        <div role="button" class="navbar-cart">
                             <img src="./src/images/icon-cart.svg" alt="cart" />
                         </div>
                         <div class="cart-content hidden">
@@ -86,7 +89,7 @@
 
                 <main>
                     <div class="product-image">
-                        <div class="product-image__thumbnail">
+                        <div class="product-image__large">
                             <button class="control control-previous"></button>
                             <img
                                 src="../src/images/image-product-1.jpg"
@@ -94,11 +97,13 @@
                             />
                             <button class="control control-next"></button>
                         </div>
-                        <div class="product-image__items hidden">
-                            <div class="product-image__item"></div>
-                            <div class="product-image__item"></div>
-                            <div class="product-image__item"></div>
-                            <div class="product-image__item"></div>
+                        <div class="product-image__items ">
+                            <ul>
+                            <li class="product-image__item"><img class="active" src="../src/images/image-product-1-thumbnail.jpg" alt=""></li>
+                            <li class="product-image__item"><img src="../src/images/image-product-2-thumbnail.jpg" alt=""></li>
+                            <li class="product-image__item"><img src="../src/images/image-product-3-thumbnail.jpg" alt=""></li>
+                            <li class="product-image__item"><img src="../src/images/image-product-4-thumbnail.jpg" alt=""></li>
+                        </ul>
                         </div>
                     </div>
                     <div class="product-info">
@@ -147,5 +152,7 @@
                 <a href="https://github.com/marcinsuski">Marcin Suski</a>.
             </div>
         </footer>
+
+        <script src="./app.js"></script>
     </body>
 </html>
