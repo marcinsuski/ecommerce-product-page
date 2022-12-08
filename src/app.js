@@ -23,6 +23,7 @@ const price = document.querySelector('.price-value');
 const deleteCart = document.querySelector('.cart-delete');
 //mobile menu controls
 const burgerButton = document.querySelector('.burger-container');
+const burger = document.querySelector('.burger');
 const menuMobile = document.querySelector('.menu');
 const overlay = document.querySelector('.overlay');
 
@@ -190,6 +191,7 @@ burgerButton.addEventListener('click', toggleMenu);
 function toggleMenu() {
 menuMobile.classList.toggle('open');
 overlay.classList.toggle('open');
+burger.classList.toggle('open');
 
 }
 
