@@ -22,18 +22,38 @@
         <link rel="stylesheet" href="./dist/styles.css" />
     </head>
     <body>
-        <div class="popup hidden">
-            <img src="../src/images/image-product-1.jpg" alt="">
+        <div class="popup hidden closed">
+            <div class="popup-container">
+                <button class="popup-control popup-control-close"></button>
+                <button class="popup-control popup-control-previous"></button>
+                <img
+                    src="../src/images/image-product-1.jpg"
+                    class="popup__img"
+                    alt=""
+                />
+                <button class="popup-control popup-control-next"></button>
+            </div>
         </div>
         <div class="container">
             <div class="wrapper">
                 <nav>
+                    <div class="overlay"></div>
+                    <div class="menu-wrapper">
+                    <div class="menu ">
+                    
+                        <ul>
+                            <li><a href="#">Collections</a></li>
+                            <li><a href="#">Men</a></li>
+                            <li><a href="#">Women</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
                     <div class="navbar">
                         <div class="burger-container">
                             <div class="burger">
                                 <!--css burger-->
                                 <!-- <img src="./src/images/icon-menu.svg" alt="menu" /> -->
-                           
                             </div>
                         </div>
                         <header class="logo">
@@ -43,41 +63,50 @@
                                 alt="sneakers logo"
                             />
                         </header>
-                        <div class="menu closed">
-                            <ul>
-                                <li><a href="#">Collections</a></li>
-                                <li><a href="#">Men</a></li>
-                                <li><a href="#">Women</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
+                    </div>
                     </div>
                     <div class="navbar-right">
                         <div role="button" class="navbar-cart">
                             <img src="./src/images/icon-cart.svg" alt="cart" />
+                            <div class="navbar-cart--amount hidden"></div>
                         </div>
                         <div class="cart-content hidden">
-                            <div class="cart-content__title">Cart</div>
+                            <div class="cart-content__title">
+                                <div>Cart</div>
+                                <div class="cart-delete"></div>
+                            </div>
+                     
                             <div class="cart-content__content">
-                                <div class="cart-content__container">
+                                Your Cart is Empty
+                                <!-- <div class="cart-content__container">
                                     <div class="cart-content__image">
-                                        <img src="../src/images/image-product-1-thumbnail.jpg" alt="">
+                                        <img
+                                            src="../src/images/image-product-1-thumbnail.jpg"
+                                            alt=""
+                                        />
                                     </div>
                                     <div class="cart-items">
-                                        <div class="cart-items-model">Fall Limisted Edition Sneakers</div>
-                                        <div class="cart-items-pricing">
-                                            <div class="cart-items-price">$125.00</div>
-                                            <div class="cart-items-count">x <span>3</span></div>
-                                            <div class="cart-items-sum">$375.00</div>
+                                        <div class="cart-items-model">
+                                            Fall Limisted Edition Sneakers
                                         </div>
-                                    </div>    
+                                        <div class="cart-items-pricing">
+                                            <div class="cart-items-price">
+                                                $125.00
+                                            </div>
+                                            <div class="cart-items-count">
+                                                x <span>3</span>
+                                            </div>
+                                            <div class="cart-items-sum">
+                                                $375.00
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="cart-delete"></div>
                                 </div>
-                                <button class="checkout">Checkout</button>
+                                <button class="checkout">Checkout</button> -->
                             </div>
                         </div>
-                  
+
                         <div class="avatar">
                             <img
                                 src="./src/images/image-avatar.png"
@@ -97,13 +126,34 @@
                             />
                             <button class="control control-next"></button>
                         </div>
-                        <div class="product-image__items ">
+                        <div class="product-image__items">
                             <ul>
-                            <li class="product-image__item"><img class="active" src="../src/images/image-product-1-thumbnail.jpg" alt=""></li>
-                            <li class="product-image__item"><img src="../src/images/image-product-2-thumbnail.jpg" alt=""></li>
-                            <li class="product-image__item"><img src="../src/images/image-product-3-thumbnail.jpg" alt=""></li>
-                            <li class="product-image__item"><img src="../src/images/image-product-4-thumbnail.jpg" alt=""></li>
-                        </ul>
+                                <li class="product-image__item">
+                                    <img
+                                        class="active"
+                                        src="../src/images/image-product-1.jpg"
+                                        alt=""
+                                    />
+                                </li>
+                                <li class="product-image__item">
+                                    <img
+                                        src="../src/images/image-product-2.jpg"
+                                        alt=""
+                                    />
+                                </li>
+                                <li class="product-image__item">
+                                    <img
+                                        src="../src/images/image-product-3.jpg"
+                                        alt=""
+                                    />
+                                </li>
+                                <li class="product-image__item">
+                                    <img
+                                        src="../src/images/image-product-4.jpg"
+                                        alt=""
+                                    />
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="product-info">
@@ -119,8 +169,8 @@
                         </div>
                         <div class="product-info__price">
                             <div class="price">
-                            <p>$125.00</p>
-                            <div class="price__rebate"><p>50%</p></div>
+                                <p>$<span class="price-value">125.00</span></p>
+                                <div class="price__rebate"><p>50%</p></div>
                             </div>
                             <div class="price__before">$250.00</div>
                         </div>
@@ -130,13 +180,15 @@
                                 <div class="amount">0</div>
                                 <button class="button__add plus">+</button>
                             </div>
-                          
+
                             <button class="product-info__cart-add">
-                                <img src="../src/images/icon-cart-button.svg" alt="">
-                                <span>Add to cart</span> 
+                                <img
+                                    src="../src/images/icon-cart-button.svg"
+                                    alt=""
+                                />
+                                <span>Add to cart</span>
                             </button>
                         </div>
-                   
                     </div>
                 </main>
             </div>
@@ -153,6 +205,6 @@
             </div>
         </footer>
 
-        <script src="./app.js"></script>
+        <script src="../src/app.js"></script>
     </body>
 </html>
